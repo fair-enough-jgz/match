@@ -1,0 +1,266 @@
+/* 科技风智能助手样式系统 - 完整版 */
+:root {
+    --primary-color: #48A6A7;
+    --accent-color: #6BFFB8;
+    --neon-border: 2px solid rgba(72, 166, 167, 0.5);
+    --cyber-bg: linear-gradient(145deg, #0A192F 0%, #0F3460 100%);
+    --text-primary: #E0E0E0;
+    --scrollbar-bg: rgba(16,22,36,0.8);
+}
+
+/* 全局架构 */
+body {
+    background: var(--cyber-bg);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* 主容器系统 */
+.cyber-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(16, 22, 36, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(72, 166, 167, 0.2);
+    position: relative;
+    overflow: visible;
+    z-index: 100;
+    min-height: 90vh;
+}
+
+/* 动态扫描线特效 */
+.cyber-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 25%,
+        rgba(72, 166, 167, 0.1) 50%,
+        transparent 75%
+    );
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scanline {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); }
+}
+
+/* 导航控制模块 */
+.nav-bar {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.cyber-title {
+    font-size: 2rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(72, 166, 167, 0.3);
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+/* 智能对话窗口系统 */
+.cyber-chatbox {
+    height: 600px;
+    border: var(--neon-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    background: rgba(10, 25, 47, 0.6);
+    overflow-y: auto;
+    backdrop-filter: blur(5px);
+    scroll-behavior: smooth;
+}
+
+/* 消息气泡架构 */
+.message {
+    max-width: 85%;
+    padding: 1.2rem 1.8rem;
+    margin: 1rem;
+    border-radius: 15px;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-message {
+    background: linear-gradient(145deg,
+        rgba(72, 166, 167, 0.3) 0%,
+        rgba(10, 25, 47, 0.6) 100%);
+    border: 1px solid var(--primary-color);
+    margin-left: auto;
+}
+
+.bot-message {
+    background: rgba(16, 22, 36, 0.8);
+    border: 1px solid rgba(72, 166, 167, 0.3);
+}
+
+/* 输入控制系统 */
+.input-group {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.cyber-input {
+    width: 90%;
+    min-height: 150px;
+    max-height: 300px;
+    padding: 1.5rem;
+    background: rgba(10, 25, 47, 0.6);
+    border: var(--neon-border);
+    border-radius: 8px;
+    color: var(--accent-color);
+    font-family: monospace;
+    resize: vertical;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--scrollbar-bg);
+    transition: box-shadow 0.3s ease;
+}
+
+.cyber-input:focus {
+    box-shadow: 0 0 20px rgba(72, 166, 167, 0.3);
+    outline: none;
+}
+
+/* 交互按钮系统 */
+.cyber-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1000;
+    pointer-events: auto;
+    transform-origin: center;
+}
+
+/* 按钮状态系统 */
+.cyber-btn.primary {
+    background: linear-gradient(145deg,
+        var(--primary-color),
+        #2D7A7B);
+    color: white;
+}
+
+.cyber-btn.accent {
+    background: linear-gradient(145deg,
+        var(--accent-color),
+        #48D1CC);
+    color: #0A192F;
+}
+
+.cyber-btn.danger {
+    background: linear-gradient(145deg,
+        #FF4D4D,
+        #CC0000);
+    color: white;
+}
+
+/* 按钮动态反馈 */
+.cyber-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(72, 166, 167, 0.3);
+}
+
+.cyber-btn:active {
+    animation: clickScale 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(145deg,
+        var(--primary-color) 0%,
+        #2D7A7B 100%);
+}
+
+@keyframes clickScale {
+    0% { transform: scale(0.98) translateY(0); }
+    50% { transform: scale(1.05) translateY(-1px); }
+    100% { transform: scale(1) translateY(0); }
+}
+
+/* 动态光效系统 */
+.pulse {
+    animation: pulseGlow 1.5s infinite;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(72, 166, 167, 0.4),
+                    0 2px 8px rgba(72,166,167,0.2);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(72, 166, 167, 0),
+                    0 4px 16px rgba(72,166,167,0.4);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(72, 166, 167, 0),
+                    0 2px 8px rgba(72,166,167,0.2);
+    }
+}
+
+/* 滚动条视觉系统 */
+.cyber-chatbox::-webkit-scrollbar,
+.cyber-input::-webkit-scrollbar {
+    width: 8px;
+    background: var(--scrollbar-bg);
+}
+
+.cyber-chatbox::-webkit-scrollbar-thumb,
+.cyber-input::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+    border: 1px solid rgba(72,166,167,0.3);
+}
+
+/* 响应式适配系统 */
+@media (max-width: 768px) {
+    .cyber-container {
+        padding: 1rem;
+        margin: 1rem;
+        min-height: auto;
+    }
+
+    .nav-bar {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .cyber-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .cyber-chatbox {
+        height: 500px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cyber-input {
+        height: 120px;
+        max-height: 200px;
+    }
+}

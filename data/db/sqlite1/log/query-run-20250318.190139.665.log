@@ -1,0 +1,11 @@
+[2025-03-18 19:01:39] This is codeql query run /home/wjj/.codeql/packages/codeql/cpp-queries/1.3.5/getFunctionByLinenumber.ql --database /home/wjj/data/db/sqlite --output /home/wjj/data/result.bqrs
+[2025-03-18 19:01:39] Log file was started late.
+[2025-03-18 19:01:39] Calling plumbing command: codeql resolve ram --dataset=/home/wjj/data/db/sqlite/db-cpp --format=json
+[2025-03-18 19:01:39] [PROGRESS] resolve ram> Stringpool size measured as 9994682
+[2025-03-18 19:01:39] Plumbing command codeql resolve ram completed:
+                      [
+                        "-J-Xmx12838M",
+                        "--off-heap-ram=15971"
+                      ]
+[2025-03-18 19:01:39] Chaining via /tmp/codeql.0IUCJckE to plumbing: execute queries -J-Xmx12838M --off-heap-ram=15971 --verbosity=progress --logdir=/home/wjj/data/db/sqlite/log --evaluator-log-level=5 --warnings=show --dynamic-join-order-mode=none --qlconfig-file=/home/wjj/qlconfig.yml --output=/home/wjj/data/result.bqrs -- /home/wjj/data/db/sqlite/db-cpp path:/home/wjj/.codeql/packages/codeql/cpp-queries/1.3.5/getFunctionByLinenumber.ql
+[2025-03-18 19:01:39] Exiting with code 70

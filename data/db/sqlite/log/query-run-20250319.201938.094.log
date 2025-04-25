@@ -1,0 +1,11 @@
+[2025-03-19 20:19:38] This is codeql query run /home/vulmine/data/codeql/packages/codeql/cpp-queries/1.3.6/getFunctionByLinenumber.ql --database /home/vulmine/data/db/sqlite --output /home/vulmine/data/result.bqrs
+[2025-03-19 20:19:38] Log file was started late.
+[2025-03-19 20:19:38] Calling plumbing command: codeql resolve ram --dataset=/home/vulmine/data/db/sqlite/db-cpp --format=json
+[2025-03-19 20:19:38] [PROGRESS] resolve ram> Stringpool size measured as 9994682
+[2025-03-19 20:19:38] Plumbing command codeql resolve ram completed:
+                      [
+                        "-J-Xmx1800M",
+                        "--off-heap-ram=1407"
+                      ]
+[2025-03-19 20:19:38] Chaining via /tmp/codeql.xnoKCGEs to plumbing: execute queries -J-Xmx1800M --off-heap-ram=1407 --verbosity=progress --logdir=/home/vulmine/data/db/sqlite/log --evaluator-log-level=5 --warnings=show --dynamic-join-order-mode=none --qlconfig-file=/home/vulmine/vulmine/qlconfig.yml --output=/home/vulmine/data/result.bqrs -- /home/vulmine/data/db/sqlite/db-cpp path:/home/vulmine/data/codeql/packages/codeql/cpp-queries/1.3.6/getFunctionByLinenumber.ql
+[2025-03-19 20:19:38] Exiting with code 70

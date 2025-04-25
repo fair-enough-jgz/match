@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-04-08T07:47:32Z",
+  "source": {
+    "id": "cpp/autobuilder/summary",
+    "name": "autobuild summary",
+    "extractorName": "cpp"
+  },
+  "severity": "note",
+  "visibility": {
+    "statusPage": false,
+    "cliSummaryTable": false,
+    "telemetry": true
+  },
+  "attributes": {
+    "tried": [{ "label": "./configure", "command": "./configure", "exit_status": 0, "extractor-failures": 0, "extractor-successes": 0 },{ "label": "make", "command": "make -j 12", "exit_status": 0, "extractor-failures": 0, "extractor-successes": 9 }]
+  }
+}

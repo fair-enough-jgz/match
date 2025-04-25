@@ -1,0 +1,229 @@
+Function at address: 0x00101000
+Called functions addresses: 0x00105018
+
+
+int _init(EVP_PKEY_CTX *ctx)
+
+{
+undefined *puVar1;
+
+puVar1 = PTR___gmon_start___00103fd0;
+if (PTR___gmon_start___00103fd0 != (undefined *)0x0) {
+puVar1 = (undefined *)(*(code *)PTR___gmon_start___00103fd0)();
+}
+return (int)puVar1;
+}
+=========================================
+Function at address: 0x00101020
+Called functions addresses: None
+
+
+void FUN_00101020(void)
+
+{
+(*(code *)PTR_00103ff8)();
+return;
+}
+=========================================
+Function at address: 0x00101030
+Called functions addresses: 0x00105010
+
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+
+int snprintf(char *__s,size_t __maxlen,char *__format,...)
+
+{
+int iVar1;
+
+iVar1 = (*_DAT_00104000)();
+return iVar1;
+}
+=========================================
+Function at address: 0x00101040
+Called functions addresses: 0x00105028
+
+
+void __cxa_finalize(void)
+
+{
+(*(code *)PTR___cxa_finalize_00103fe0)();
+return;
+}
+=========================================
+Function at address: 0x00101050
+Called functions addresses: 0x00101139 0x00105000
+
+
+void processEntry _start(undefined8 param_1,undefined8 param_2)
+
+{
+undefined auStack_8 [8];
+
+(*(code *)PTR___libc_start_main_00103fc0)(main,param_2,&stack0x00000008,0,0,param_1,auStack_8);
+do {
+/* WARNING: Do nothing block with infinite loop */
+} while( true );
+}
+=========================================
+Function at address: 0x00101080
+Called functions addresses: 0x00105008
+
+
+/* WARNING: Removing unreachable block (ram,0x00101093) */
+/* WARNING: Removing unreachable block (ram,0x0010109f) */
+
+void deregister_tm_clones(void)
+
+{
+return;
+}
+=========================================
+Function at address: 0x001010b0
+Called functions addresses: 0x00105020
+
+
+/* WARNING: Removing unreachable block (ram,0x001010d4) */
+/* WARNING: Removing unreachable block (ram,0x001010e0) */
+
+void register_tm_clones(void)
+
+{
+return;
+}
+=========================================
+Function at address: 0x001010f0
+Called functions addresses: 0x00101040 0x00101080
+
+
+void __do_global_dtors_aux(void)
+
+{
+if (completed_0 == '\0') {
+if (PTR___cxa_finalize_00103fe0 != (undefined *)0x0) {
+__cxa_finalize(__dso_handle);
+}
+deregister_tm_clones();
+completed_0 = 1;
+return;
+}
+return;
+}
+=========================================
+Function at address: 0x00101130
+Called functions addresses: 0x001010b0
+
+
+void frame_dummy(void)
+
+{
+register_tm_clones();
+return;
+}
+=========================================
+Function at address: 0x00101139
+Called functions addresses: 0x00101030
+
+
+undefined8 main(undefined8 param_1,long param_2)
+
+{
+char local_88 [128];
+
+snprintf(local_88,0x80,*(char **)(param_2 + 8));
+return 0;
+}
+=========================================
+Function at address: 0x0010117c
+Called functions addresses: None
+
+
+void _fini(void)
+
+{
+return;
+}
+=========================================
+Function at address: 0x00105000
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __libc_start_main(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* __libc_start_main@GLIBC_2.34 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105008
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void _ITM_deregisterTMCloneTable(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105010
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+
+int snprintf(char *__s,size_t __maxlen,char *__format,...)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* snprintf@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105018
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __gmon_start__(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105020
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void _ITM_registerTMCloneTable(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105028
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __cxa_finalize(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* __cxa_finalize@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================

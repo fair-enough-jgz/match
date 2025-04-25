@@ -1,0 +1,3 @@
+./jimsh /home/jgz/data/code/sqlite/tool/mksqlite3h.tcl /home/jgz/data/code/sqlite -o sqlite3.h
+make: ./jimsh: Permission denied
+make: *** [/home/jgz/data/code/sqlite/main.mk:1072: sqlite3.h] Error 127

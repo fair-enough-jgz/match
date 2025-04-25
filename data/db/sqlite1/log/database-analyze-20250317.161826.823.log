@@ -1,0 +1,14 @@
+[2025-03-17 16:18:26] This is codeql database analyze /home/wjj/data/db/sqlite --format=CSV --output=/home/wjj/data/result/sqlite.csv codeql/cpp-queries
+[2025-03-17 16:18:26] Log file was started late.
+[2025-03-17 16:18:26] [PROGRESS] database analyze> Running queries.
+[2025-03-17 16:18:26] Running plumbing command: codeql database run-queries --evaluator-log-level=5 --warnings=show --dynamic-join-order-mode=none --qlconfig-file=/home/wjj/qlconfig.yml --no-rerun --interpret-passthrough=null,--format=csv,-o=/home/wjj/data/result/sqlite.csv,--max-paths=4,--csv-location-format=line-column,--print-diagnostics-summary,--print-metrics-summary,--qlconfig-file=/home/wjj/qlconfig.yml,--,/home/wjj/data/db/sqlite,codeql/cpp-queries -- /home/wjj/data/db/sqlite codeql/cpp-queries
+[2025-03-17 16:18:26] Calling plumbing command: codeql resolve ram --dataset=/home/wjj/data/db/sqlite/db-cpp --format=json
+[2025-03-17 16:18:26] [PROGRESS] resolve ram> Stringpool size measured as 9994682
+[2025-03-17 16:18:26] Plumbing command codeql resolve ram completed:
+                      [
+                        "-J-Xmx12838M",
+                        "--off-heap-ram=15971"
+                      ]
+[2025-03-17 16:18:26] Chaining via /tmp/codeql.aeqXKXta to plumbing: execute queries -J-Xmx12838M --off-heap-ram=15971 --verbosity=progress --logdir=/home/wjj/data/db/sqlite/log --evaluator-log-level=5 --warnings=show --dynamic-join-order-mode=none --qlconfig-file=/home/wjj/qlconfig.yml --no-rerun --interpret-passthrough=null,--format=csv,-o=/home/wjj/data/result/sqlite.csv,--max-paths=4,--csv-location-format=line-column,--print-diagnostics-summary,--print-metrics-summary,--qlconfig-file=/home/wjj/qlconfig.yml,--,/home/wjj/data/db/sqlite,codeql/cpp-queries --output=/home/wjj/data/db/sqlite/results -- /home/wjj/data/db/sqlite/db-cpp codeql/cpp-queries
+[2025-03-17 16:18:26] Plumbing command codeql database run-queries completed with status 70.
+[2025-03-17 16:18:26] Exiting with code 70

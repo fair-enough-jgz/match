@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh" class="cyber-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>VulAgent | 智能任务管理</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_s.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cyber-container">
+        <!-- 动态效果层 -->
+        <div class="hologram-overlay"></div>
+        <div class="neon-border"></div>
+
+        <!-- 导航栏 -->
+        <nav class="cyber-navbar">
+            <div class="nav-brand">
+                <span class="cyber-glitch" data-text="VulAgent">VulAgent</span>
+            </div>
+            <div class="nav-actions">
+                <button class="cyber-btn primary" onclick="gotoIndex()">
+                    <span class="btn-glow"></span>
+                    控制台首页
+                </button>
+                <button class="cyber-btn neon" onclick="openModal()">
+                    <span class="btn-glow"></span>
+                    + 新建任务
+                </button>
+            </div>
+        </nav>
+
+        <!-- 任务面板 -->
+        <section class="task-panel">
+            <h2 class="cyber-heading"><span class="scanline">任务列表</span></h2>
+            <div class="table-wrapper">
+                <table class="cyber-table">
+                    <thead>
+                        <tr>
+                            <th>任务编号</th>
+                            <th>任务名称</th>
+                            <th>检测目标</th>
+                            <th>编译指令</th>
+                            <th>运行指令</th>
+                            <th>输入文件</th>
+                            <th>创建时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for task in tasks %}
+                        <tr>
+                            <td>{{task.id}}</td>
+                            <td>{{task.name}}</td>
+                            <td>{{task.target}}</td>
+                            <td><code>{{task.compileCommand}}</code></td>
+                            <td><code>{{task.runCommand}}</code></td>
+                            <td>{{task.input}}</td>
+                            <td>{{task.createTime}}</td>
+                            <td class="action-buttons">
+                                <button class="cyber-btn sm primary" onclick="viewTask({{task.id}})">详情</button>
+                                <button class="cyber-btn sm danger" onclick="deleteTask({{task.id}})">删除</button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 新建任务模态框 -->
+        <div class="cyber-modal" id="newTaskModal">
+            <div class="modal-content pulse-in">
+                <div class="modal-header">
+                    <span class="close-btn" onclick="closeModal()">&times;</span>
+                    <h3 class="modal-title">新建源码漏洞挖掘任务</h3>
+                </div>
+                <div class="modal-body">
+                    <form id="newTaskForm" action="/createSourceTask" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="taskName" class="form-label">任务名称*</label>
+                            <input type="text" id="taskName" name="taskName" class="cyber-input"
+                                   placeholder="VulnScan_Project" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sourceFile" class="form-label">上传源代码*</label>
+                            <div class="file-upload">
+                                <input type="file" id="sourceFile" name="sourceFile"
+                                       class="cyber-file-input" required>
+                                <div class="upload-display">点击选择文件</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="compileCommand" class="form-label">编译指令</label>
+                            <input type="text" id="compileCommand" name="compileCommand"
+                                   class="cyber-input" placeholder="gcc -o target source.c">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="runCommand" class="form-label">运行指令</label>
+                            <input type="text" id="runCommand" name="runCommand"
+                                   class="cyber-input" placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input" class="form-label">输入文件</label>
+                            <input type="text" id="input" name="input"
+                                   class="cyber-input" placeholder="">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="cyber-btn danger" onclick="closeModal()">关闭</button>
+                            <button type="submit" class="cyber-btn neon" onclick="createTask()">创建任务</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 模态框控制
+        function openModal() {
+            document.getElementById('newTaskModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('newTaskModal').style.display = 'none';
+        }
+
+        // 表单验证
+        function createTask() {
+            const taskName = document.getElementById('taskName').value;
+            const target = document.getElementById('sourceFile').value;
+
+            if (taskName && target) {
+                document.getElementById("newTaskForm").submit();
+                closeModal();
+            } else {
+                alert("请填写必须字段！");
+            }
+        }
+
+        // 任务操作
+        function viewTask(id) {
+            window.location.href = "/viewSourceTask/" + id;
+        }
+
+        function deleteTask(id) {
+            if (confirm(`确认删除任务 ${id} 吗？`)) {
+                window.location.href = "/deleteSourceTask/" + id;
+            }
+        }
+
+        function gotoIndex() {
+            window.location.href = '/';
+        }
+    </script>
+</body>
+</html>

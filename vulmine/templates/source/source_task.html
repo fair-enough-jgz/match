@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任务详情</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_st.css') }}">
+    <script>
+        function startTask(id) {
+            const toggleButton = document.getElementById('toggleButton');
+            const displayBox = document.getElementById('output');
+            const content = document.getElementById('content');
+            if (displayBox.style.display === 'none' || displayBox.style.display === '') {
+                displayBox.style.display = 'block';
+                toggleButton.textContent = '结束';
+
+                fetch('/startSourceTask?id=' + id, { method: 'POST' })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === "task started.") {
+                            content.textContent = "";
+                            content.scrollTop = content.scrollHeight;
+                            updateOutput(id);
+                        }
+                    });
+            } else {
+                displayBox.style.display = 'none';
+                toggleButton.textContent = '开始';
+            }
+        }
+
+        function updateOutput(id) {
+            var eventSource = new EventSource('/get_output');
+            eventSource.onmessage = function (event) {
+                content.textContent += "\n" + event.data;
+                content.scrollTop = content.scrollHeight;
+                if (event.data === "漏洞扫描任务完成.") {
+                    eventSource.close();
+                }
+            };
+        }
+
+        function toggleDetails(ruleName) {
+            var detailsRow = document.getElementById('details-' + ruleName);
+            if (detailsRow.style.display === 'none' || detailsRow.style.display === '') {
+                detailsRow.style.display = 'table-row';
+            } else {
+                detailsRow.style.display = 'none';
+            }
+        }
+
+        function gotoSource() {
+            window.location.href = '/source';
+        }
+
+        function sourceVulAnalyze(id) {
+            window.location.href = "/sourceVulAnalyze/" + id;
+        }
+
+        function download(file) {
+            window.location.href = '/download/' + file;
+        }
+
+        function openModal(id) {
+            document.getElementById('supplement').style.display = 'block';
+            document.getElementById('vul_id').value = id;
+        }
+
+        function closeModal() {
+            document.getElementById('supplement').style.display = 'none';
+        }
+
+        function supplementVul() {
+            const vul_id = document.getElementById("vul_id").value;
+            const vulReport = document.getElementById('vulReport').value;
+            const vulPatch = document.getElementById('vulPatch').value;
+
+            if (vulReport || vulPatch) {
+                fetch('/supplementVul', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: "vul_id=" + encodeURIComponent(vul_id) + "&vulReport=" + encodeURIComponent(vulReport) + "&vulPatch=" + encodeURIComponent(vulPatch),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data);
+                    })
+                closeModal();
+            } else {
+                alert("无补充信息！");
+            }
+        }
+
+        function gotoIndex() {
+            window.location.href = '/';
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 完整导航栏结构 -->
+    <div class="container">
+        <div style="display: flex; margin-left: auto; width: 100%;height: 30pt;">
+            <p style="font-size: 14pt;">VulAgent</p>
+            <button class="btn-primary" onclick="gotoIndex()" style="margin-left: auto;">首页</button>
+            <button class="btn btn-primary" onclick="gotoSource()">任务列表</button>
+        </div>
+        <hr>
+
+        <!-- 完整任务详情表格 -->
+        <h2>任务详情</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 80pt;">任务编号</th>
+                    <th style="width: 80pt;">任务名称</th>
+                    <th>检测目标</th>
+                    <th>编译指令</th>
+                    <th>运行指令</th>
+                    <th>输入文件</th>
+                    <th style="width: 120pt;">创建时间</th>
+                    <th style="width: 50pt;">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{task.id}}</td>
+                    <td>{{task.name}}</td>
+                    <td>{{task.target}}</td>
+                    <td>{{task.compileCommand}}</td>
+                    <td>{{task.runCommand}}</td>
+                    <td>{{task.input}}</td>
+                    <td>{{task.createTime}}</td>
+                    <td>
+                        <button id="toggleButton" class="btn btn-primary" onclick="startTask({{task.id}})">开始</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 完整输出框 -->
+        <div id="output" class="output">
+            <p id="content"></p>
+        </div>
+
+        <!-- 完整漏洞扫描结果表格 -->
+        <h2>漏洞扫描结果</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 250px;">漏洞类型</th>
+                    <th>漏洞类型描述</th>
+                    <th style="width: 70px;">类型</th>
+                    <th style="width: 100px;">漏洞详情</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rule in results %}
+                <tr>
+                    <td>{{ rule.rule_name }}</td>
+                    <td>{{ rule.rule_description }}</td>
+                    <td>{{ rule.threat_level }}</td>
+                    <td>
+                        <button class="btn-primary" onclick="toggleDetails('{{ rule.rule_name }}')">漏洞详情</button>
+                    </td>
+                </tr>
+
+                <tr id="details-{{ rule.rule_name }}" style="display: none;">
+                    <td colspan="4">
+                        <table class="sub-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5%;">序号</th>
+                                    <th style="width: 40%;">漏洞描述</th>
+                                    <th style="width: 40%;">漏洞代码</th>
+                                    <th style="width: 10%;">PoC</th>
+                                    <th style="width: 5%;">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in rule.vuls %}
+                                <tr>
+                                    <td>
+                                        <p>{{ row.id }}</p>
+                                    </td>
+                                    <td>
+                                        {% for line in row.vulnerability_description.splitlines() %}
+                                        <p style="text-align: left; margin: 5px;">{{ line }}</p>
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        <h3 style="text-align: left; line-height: 0.6; margin: 0;">{{ row.source_file }}
+                                        </h3>
+                                        <div class="code-container">
+                                            {% for line_num, line in row.pre_lines %}
+                                            <div class="non-highlighted">
+                                                <div class="linenumber">{{ line_num }}:</div>{{ line }}
+                                            </div>
+                                            {% endfor %}
+                                            {% for line_num, line in row.code_lines %}
+                                            <div class="highlighted">
+                                                <div class="linenumber">{{ line_num }}:</div>{{ line }}
+                                            </div>
+                                            {% endfor %}
+                                            {% for line_num, line in row.post_lines %}
+                                            <div class="non-highlighted">
+                                                <div class="linenumber">{{ line_num }}:</div>{{ line }}
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {% if row.poc %}
+                                        <button class="btn-primary" onclick="download('{{ row.poc }}')">PoC</button>
+                                        <br>
+                                        <button class="btn-primary" onclick="download('{{ row.poc_python }}')">PoC
+                                            (Python)</button> <br>
+                                        {% endif %}
+                                        {% if row.vul_report %}
+                                        <a href='{{ row.vul_report }}'>漏洞报告</a> <br>
+                                        {% endif %}
+                                        {% if row.vul_patch %}
+                                        <a href='{{ row.vul_patch }}'>补丁</a>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <button class="btn-primary"
+                                            onclick="sourceVulAnalyze('{{ row.id }}')">验证</button>
+                                        <button class="btn-primary" onclick="openModal('{{ row.id }}')">补充信息</button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- 完整模态框 -->
+    <div class="modal" id="supplement">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>补充漏洞信息</h2>
+            </div>
+            <div class="modal-body" style="padding-top: 1.0rem; padding-bottom: 0.5rem;">
+                <form id="supplementForm" action="/supplementVul" method="POST">
+                    <input type="text" id="vul_id" name="vul_id" style="display: none;">
+                    <div class="form-group">
+                        <label for="vulReport" class="form-label">漏洞报告:</label>
+                        <input type="text" id="vulReport" name="vulReport" class="cyber-input" placeholder="请输入漏洞报告链接">
+                    </div>
+                    <div class="form-group">
+                        <label for="vulPatch" class="form-label">补丁:</label>
+                        <input type="text" id="vulPatch" name="vulPatch" class="cyber-input" placeholder="请输入补丁链接">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-danger" onclick="closeModal()">关闭</button>
+                        <button type="button" class="btn-primary" onclick="supplementVul()">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

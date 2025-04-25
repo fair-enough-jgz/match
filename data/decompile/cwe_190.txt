@@ -1,0 +1,527 @@
+Function at address: 0x00101000
+Called functions addresses: 0x00105028
+
+
+int _init(EVP_PKEY_CTX *ctx)
+
+{
+undefined *puVar1;
+
+puVar1 = PTR___gmon_start___00103fd0;
+if (PTR___gmon_start___00103fd0 != (undefined *)0x0) {
+puVar1 = (undefined *)(*(code *)PTR___gmon_start___00103fd0)();
+}
+return (int)puVar1;
+}
+=========================================
+Function at address: 0x00101020
+Called functions addresses: None
+
+
+void FUN_00101020(void)
+
+{
+(*(code *)PTR_00103ff8)();
+return;
+}
+=========================================
+Function at address: 0x00101030
+Called functions addresses: 0x00105000
+
+
+
+
+void free(void *__ptr)
+
+{
+(*(code *)PTR_free_00104000)();
+return;
+}
+=========================================
+Function at address: 0x00101040
+Called functions addresses: 0x00105018
+
+
+
+
+int printf(char *__format,...)
+
+{
+int iVar1;
+
+iVar1 = (*(code *)PTR_printf_00104008)();
+return iVar1;
+}
+=========================================
+Function at address: 0x00101050
+Called functions addresses: 0x00105020
+
+
+
+
+void srand(uint __seed)
+
+{
+(*(code *)PTR_srand_00104010)();
+return;
+}
+=========================================
+Function at address: 0x00101060
+Called functions addresses: 0x00105030
+
+
+
+
+void * memcpy(void *__dest,void *__src,size_t __n)
+
+{
+void *pvVar1;
+
+pvVar1 = (void *)(*(code *)PTR_memcpy_00104018)();
+return pvVar1;
+}
+=========================================
+Function at address: 0x00101070
+Called functions addresses: 0x00105038
+
+
+
+
+void * malloc(size_t __size)
+
+{
+void *pvVar1;
+
+pvVar1 = (void *)(*(code *)PTR_malloc_00104020)();
+return pvVar1;
+}
+=========================================
+Function at address: 0x00101080
+Called functions addresses: 0x00105040
+
+
+
+
+int atoi(char *__nptr)
+
+{
+int iVar1;
+
+iVar1 = (*(code *)PTR_atoi_00104028)();
+return iVar1;
+}
+=========================================
+Function at address: 0x00101090
+Called functions addresses: 0x00105050
+
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+
+int rand(void)
+
+{
+int iVar1;
+
+iVar1 = (*_DAT_00104030)();
+return iVar1;
+}
+=========================================
+Function at address: 0x001010a0
+Called functions addresses: 0x00105058
+
+
+void __cxa_finalize(void)
+
+{
+(*(code *)PTR___cxa_finalize_00103fe0)();
+return;
+}
+=========================================
+Function at address: 0x001010b0
+Called functions addresses: 0x00105008 0x0010136e
+
+
+void processEntry _start(undefined8 param_1,undefined8 param_2)
+
+{
+undefined auStack_8 [8];
+
+(*(code *)PTR___libc_start_main_00103fc0)(main,param_2,&stack0x00000008,0,0,param_1,auStack_8);
+do {
+/* WARNING: Do nothing block with infinite loop */
+} while( true );
+}
+=========================================
+Function at address: 0x001010e0
+Called functions addresses: 0x00105010
+
+
+/* WARNING: Removing unreachable block (ram,0x001010f3) */
+/* WARNING: Removing unreachable block (ram,0x001010ff) */
+
+void deregister_tm_clones(void)
+
+{
+return;
+}
+=========================================
+Function at address: 0x00101110
+Called functions addresses: 0x00105048
+
+
+/* WARNING: Removing unreachable block (ram,0x00101134) */
+/* WARNING: Removing unreachable block (ram,0x00101140) */
+
+void register_tm_clones(void)
+
+{
+return;
+}
+=========================================
+Function at address: 0x00101150
+Called functions addresses: 0x001010a0 0x001010e0
+
+
+void __do_global_dtors_aux(void)
+
+{
+if (completed_0 == '\0') {
+if (PTR___cxa_finalize_00103fe0 != (undefined *)0x0) {
+__cxa_finalize(__dso_handle);
+}
+deregister_tm_clones();
+completed_0 = 1;
+return;
+}
+return;
+}
+=========================================
+Function at address: 0x00101190
+Called functions addresses: 0x00101110
+
+
+void frame_dummy(void)
+
+{
+register_tm_clones();
+return;
+}
+=========================================
+Function at address: 0x00101199
+Called functions addresses: 0x00101070 0x00101060
+
+
+void * make_table(uint param_1,uint param_2,void *param_3)
+
+{
+void *pvVar1;
+undefined4 local_c;
+
+pvVar1 = malloc((ulong)(param_1 * param_2));
+if (pvVar1 == (void *)0x0) {
+pvVar1 = (void *)0x0;
+}
+else {
+for (local_c = 0; local_c < param_2; local_c = local_c + 1) {
+memcpy((void *)((ulong)(local_c * param_1) + (long)pvVar1),param_3,(ulong)param_1);
+}
+}
+return pvVar1;
+}
+=========================================
+Function at address: 0x0010120f
+Called functions addresses: 0x00101199 0x00101040 0x00101030
+
+
+void tassa1(undefined4 param_1,undefined4 param_2)
+
+{
+undefined4 local_15;
+undefined local_11;
+void *local_10;
+
+local_15 = 0x74696e69;
+local_11 = 0;
+local_10 = (void *)make_table(param_1,param_2,&local_15);
+printf("Table at %p\n",local_10);
+free(local_10);
+return;
+}
+=========================================
+Function at address: 0x00101269
+Called functions addresses: 0x00101050 0x00101090
+
+
+int malloc_overflow_get_num_elems(void)
+
+{
+int iVar1;
+
+srand(0x2a);
+iVar1 = rand();
+return iVar1 * 1000000;
+}
+=========================================
+Function at address: 0x00101284
+Called functions addresses: 0x00101070 0x00101040 0x00101030 0x00101269
+
+
+void malloc_overflow(void)
+
+{
+int iVar1;
+void *__ptr;
+
+iVar1 = malloc_overflow_get_num_elems();
+__ptr = malloc((long)iVar1 << 2);
+printf("PNG at %p\n",__ptr);
+free(__ptr);
+return;
+}
+=========================================
+Function at address: 0x001012d8
+Called functions addresses: 0x00101269
+
+
+void packet_get_int(void)
+
+{
+malloc_overflow_get_num_elems();
+return;
+}
+=========================================
+Function at address: 0x001012e8
+Called functions addresses: None
+
+
+undefined8 packet_get_string(void)
+
+{
+return 0;
+}
+=========================================
+Function at address: 0x001012f3
+Called functions addresses: 0x001012d8 0x00101070 0x001012e8 0x00101030
+
+
+void overflow_ssh3_1(void)
+
+{
+int iVar1;
+void *__ptr;
+undefined8 uVar2;
+undefined4 local_1c;
+
+iVar1 = packet_get_int();
+if (0 < iVar1) {
+__ptr = malloc((long)iVar1 << 3);
+for (local_1c = 0; local_1c < iVar1; local_1c = local_1c + 1) {
+uVar2 = packet_get_string();
+*(undefined8 *)((long)local_1c * 8 + (long)__ptr) = uVar2;
+}
+free(__ptr);
+}
+return;
+}
+=========================================
+Function at address: 0x0010136e
+Called functions addresses: 0x001012f3 0x0010120f 0x00101284 0x00101080
+
+
+undefined8 main(undefined8 param_1,long param_2)
+
+{
+int iVar1;
+int iVar2;
+
+iVar1 = atoi(*(char **)(param_2 + 0x10));
+iVar2 = atoi(*(char **)(param_2 + 8));
+tassa1(iVar2,iVar1);
+malloc_overflow();
+overflow_ssh3_1();
+return 0;
+}
+=========================================
+Function at address: 0x001013d0
+Called functions addresses: None
+
+
+void _fini(void)
+
+{
+return;
+}
+=========================================
+Function at address: 0x00105000
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+
+void free(void *__ptr)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* free@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105008
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __libc_start_main(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* __libc_start_main@GLIBC_2.34 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105010
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void _ITM_deregisterTMCloneTable(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105018
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+
+int printf(char *__format,...)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* printf@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105020
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+
+void srand(uint __seed)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* srand@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105028
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __gmon_start__(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105030
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+
+void * memcpy(void *__dest,void *__src,size_t __n)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* memcpy@GLIBC_2.14 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105038
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+
+void * malloc(size_t __size)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* malloc@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105040
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+
+int atoi(char *__nptr)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* atoi@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105048
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void _ITM_registerTMCloneTable(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105050
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+
+int rand(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* rand@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105058
+Called functions addresses: None
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __cxa_finalize(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* __cxa_finalize@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================

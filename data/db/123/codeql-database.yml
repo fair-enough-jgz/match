@@ -1,0 +1,41 @@
+---
+sourceLocationPrefix: /home/jgz/data/code/sqlite
+baselineLinesOfCode: 522283
+unicodeNewlines: false
+columnKind: utf8
+primaryLanguage: cpp
+inProgress:
+  primaryLanguage: cpp
+  installedExtractors:
+    csharp:
+     - /home/jgz/data/codeql-linux64/codeql/csharp
+    go:
+     - /home/jgz/data/codeql-linux64/codeql/go
+    yaml:
+     - /home/jgz/data/codeql-linux64/codeql/yaml
+    csv:
+     - /home/jgz/data/codeql-linux64/codeql/csv
+    cpp:
+     - /home/jgz/data/codeql-linux64/codeql/cpp
+    javascript:
+     - /home/jgz/data/codeql-linux64/codeql/javascript
+    python:
+     - /home/jgz/data/codeql-linux64/codeql/python
+    xml:
+     - /home/jgz/data/codeql-linux64/codeql/xml
+    java:
+     - /home/jgz/data/codeql-linux64/codeql/java
+    ruby:
+     - /home/jgz/data/codeql-linux64/codeql/ruby
+    actions:
+     - /home/jgz/data/codeql-linux64/codeql/actions
+    properties:
+     - /home/jgz/data/codeql-linux64/codeql/properties
+    html:
+     - /home/jgz/data/codeql-linux64/codeql/html
+    swift:
+     - /home/jgz/data/codeql-linux64/codeql/swift
+creationMetadata:
+  cliVersion: 2.20.5
+  creationTime: 2025-04-08T07:40:17.659283877Z
+finalised: false

@@ -1,0 +1,135 @@
+/* 全局变量定义 */
+:root {
+    --deep-space: #0A192F;    /* 深空蓝主色 */
+    --cyber-teal: #64FFDA;    /* 赛博青色 */
+    --neon-mint: #88D498;     /* 霓虹薄荷绿 */
+    --hologram: rgba(100,255,218,0.1); /* 半透明全息效果 */
+}
+
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 盒模型统一 */
+}
+
+/* 全局布局 */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--deep-space) 0%, rgba(16,36,69,0.9) 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 隐藏溢出内容 */
+}
+
+/* 主容器样式 */
+.cyber-container {
+    position: relative;
+    padding: 3rem;
+    border-radius: 15px;
+    max-width: 800px;
+    width: 90%;
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    border: 2px solid var(--cyber-teal);
+    box-shadow: 0 0 30px rgba(100,255,218,0.3);
+    overflow: hidden;
+}
+
+/* 全息扫描线背景 */
+.hologram-effect {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--hologram) 0%,
+        var(--hologram) 5%,
+        transparent 5%,
+        transparent 10%
+    );
+    animation: scanlines 20s linear infinite; /* 持续扫描动画 */
+    pointer-events: none; /* 避免遮挡交互 */
+}
+
+/* 霓虹边框动画 */
+.neon-border {
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    animation: neonPulse 1.5s infinite alternate; /* 呼吸效果 */
+}
+
+/* 标题样式 */
+.cyber-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 15px rgba(100,255,218,0.4);
+    position: relative;
+    z-index: 100; /* 确保在背景层上方 */
+}
+
+/* 按钮交互设计 */
+.cyber-button {
+    position: relative;
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    background: transparent;
+    border: 2px solid var(--cyber-teal);
+    color: var(--cyber-teal);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden; /* 隐藏溢出光效 */
+}
+
+/* 按钮光效伪元素 */
+.cyber-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(100,255,218,0.2), transparent);
+    transition: 0.5s; /* 流光动画速度 */
+}
+
+/* 悬停交互效果 */
+.cyber-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px var(--cyber-teal);
+}
+.cyber-button:hover::before {
+    left: 100%; /* 触发流光移动 */
+}
+
+/* 关键帧动画 */
+@keyframes neonPulse {
+    from { box-shadow: 0 0 5px var(--cyber-teal); }
+    to { box-shadow: 0 0 20px var(--cyber-teal); }
+}
+
+@keyframes scanlines {
+    from { background-position: 0 0; }
+    to { background-position: 0 100vh; }
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .cyber-container {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    .cyber-title {
+        font-size: 2rem;
+    }
+    .cyber-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}

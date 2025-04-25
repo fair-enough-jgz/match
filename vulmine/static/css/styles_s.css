@@ -1,0 +1,330 @@
+/* 科技风主题变量 */
+:root {
+    --deep-space: #0a192f;
+    --cyber-blue: #64fafa;
+    --neon-green: #7fffd4;
+    --matrix-bg: rgba(16, 28, 46, 0.95);
+    --hologram: linear-gradient(45deg,
+        rgba(100,255,218,0.1) 0%,
+        rgba(100,255,218,0.05) 50%,
+        transparent 100%);
+}
+
+/* 基础重置 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', monospace;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--deep-space) 0%, rgba(16,36,69,0.9) 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto; /* 隐藏溢出内容 */
+}
+/* 科技风容器 */
+.cyber-container {
+    position: relative;
+    max-width: 1440px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--matrix-bg);
+    border: 1px solid var(--cyber-blue);
+    box-shadow: 0 0 40px rgba(100,255,218,0.2);
+    backdrop-filter: blur(12px);
+}
+
+/* 动态背景层 */
+.hologram-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--hologram);
+    animation: scan 20s linear infinite;
+    pointer-events: none;
+}
+
+.neon-border {
+    position: absolute;
+    inset: -2px;
+    border: 2px solid var(--cyber-blue);
+    filter: drop-shadow(0 0 10px var(--cyber-blue));
+    animation: neonPulse 2s ease-in-out infinite;
+}
+
+/* 导航栏 */
+.cyber-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(100,255,218,0.2);
+}
+
+.nav-brand .cyber-glitch {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: var(--cyber-blue);
+    text-shadow: 0 0 15px rgba(100,255,218,0.4);
+    position: relative;
+}
+
+/* 科技风表格 */
+.cyber-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(16, 22, 36, 0.8);
+}
+
+.cyber-table th {
+    background: linear-gradient(180deg,
+        rgba(16, 28, 46, 0.9) 0%,
+        rgba(10, 25, 47, 0.9) 100%);
+    padding: 1.2rem;
+    color: var(--neon-green);
+    border-bottom: 2px solid var(--cyber-blue);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(5px);
+}
+
+.cyber-table td {
+    padding: 1rem;
+    color: #c0caf5;
+    border-bottom: 1px solid rgba(100,255,218,0.1);
+    transition: all 0.3s ease;
+}
+
+.cyber-table tr:hover td {
+    background: rgba(100,255,218,0.05);
+    transform: translateX(5px);
+}
+
+/* 按钮交互增强 */
+.cyber-btn {
+    position: relative;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--cyber-blue);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.cyber-btn.neon {
+    background: linear-gradient(90deg,
+        rgba(100,255,218,0.2) 0%,
+        rgba(100,255,218,0.1) 100%);
+    border: 1px solid var(--cyber-blue);
+}
+
+.cyber-btn .btn-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%,
+        rgba(100,255,218,0.4) 0%,
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cyber-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(100,255,218,0.3);
+}
+
+.cyber-btn:hover .btn-glow {
+    opacity: 1;
+}
+
+/* 模态框动效 */
+.cyber-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+
+.modal-content.pulse-in {
+    animation: modalIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes scan {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+@keyframes neonPulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+@keyframes modalIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .cyber-container {
+        margin: 0;
+        padding: 1rem;
+        border: none;
+    }
+
+    .cyber-table td {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .cyber-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+/* 新增模态框样式 */
+#newTaskModal.cyber-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+    z-index: 999;
+}
+
+.modal-content {
+    position: relative;
+    width: 600px;
+    margin: 5% auto;
+    background: linear-gradient(145deg,
+        rgba(16, 22, 36, 0.98) 0%,
+        rgba(10, 25, 47, 0.95) 100%);
+    border: 2px solid var(--cyber-blue);
+    border-radius: 12px;
+    box-shadow:
+        0 0 40px rgba(100,255,218,0.25),
+        inset 0 0 30px rgba(100,255,218,0.1);
+    animation: modalIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(100,255,218,0.2);
+    position: relative;
+}
+
+.modal-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--neon-green);
+    text-shadow: 0 0 15px rgba(127,255,212,0.3);
+    font-size: 1.5rem;
+}
+
+.close-btn {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.2rem;
+    color: var(--cyber-blue);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg);
+    color: #ff5050;
+}
+
+.modal-body {
+    padding: 2rem 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    color: var(--cyber-blue);
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.cyber-input {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(16, 22, 36, 0.8);
+    border: 1px solid rgba(100,255,218,0.3);
+    color: var(--neon-green);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.cyber-input:focus {
+    outline: none;
+    border-color: var(--cyber-blue);
+    box-shadow: 0 0 15px rgba(100,255,218,0.2);
+}
+
+.file-upload {
+    position: relative;
+    border: 2px dashed rgba(100,255,218,0.3);
+    border-radius: 6px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.cyber-file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-display {
+    color: rgba(100,255,218,0.8);
+    font-size: 0.9rem;
+}
+
+.modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(100,255,218,0.2);
+    text-align: right;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+}
+
+@keyframes modalIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

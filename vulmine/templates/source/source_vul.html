@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漏洞分析</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_sv.css') }}">
+    <script>
+        function viewTask(task_id) {
+            window.location.href = "/viewSourceTask/" + task_id;
+        }
+
+        function chatWithLLM(task_id) {
+            let prompt = document.getElementById("llm").value;
+            let chatbox = document.getElementById("llm-chatbox");
+
+            let userMessage = document.createElement("div");
+            userMessage.className = "message user-message";
+            userMessage.innerHTML = prompt.replace(/\n/g, "<br>");
+            chatbox.appendChild(userMessage);
+            chatbox.scrollTop = chatbox.scrollHeight;
+
+            let waitMessage = document.createElement("div");
+            waitMessage.className = "message bot-message";
+            waitMessage.innerHTML = "<div class=\"loading\"><div class=\"loading-spinner\"></div>正在分析，请稍等...</div>";
+            chatbox.appendChild(waitMessage);
+            chatbox.scrollTop = chatbox.scrollHeight;
+
+            fetch('/chat_with_llm', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'prompt=' + encodeURIComponent(prompt) + "&task_id=" + encodeURIComponent(task_id)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    chatbox.removeChild(waitMessage);
+
+                    let botMessage = document.createElement("div");
+                    botMessage.className = "message bot-message";
+                    botMessage.innerHTML = data["response"];
+                    chatbox.appendChild(botMessage);
+                    chatbox.scrollTop = chatbox.scrollHeight;
+
+                    document.getElementById("llm").value = data["nextPrompt"];
+
+                    if (data["timeToStop"] == "no") {
+                        chatWithLLM();
+                    }
+                })
+                .catch(error => console.error('提交失败:', error));
+
+        }
+
+        function savePoC(vul_id) {
+            fetch('/save_poc', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'vul_id=' + encodeURIComponent(vul_id)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data);
+                })
+                .catch(error => console.error('提交失败:', error));
+        }
+
+        function gotoIndex() {
+            window.location.href = '/';
+        }
+
+        function gotoSource() {
+            window.location.href = '/source';
+        }
+    </script>
+</head>
+<body>
+    <div class="cyber-container">
+        <div class="nav-bar">
+            <h1 class="cyber-title">VulAgent</h1>
+            <div class="button-group">
+                <button class="cyber-btn primary" onclick="gotoIndex()">首页</button>
+                <button class="cyber-btn primary" onclick="gotoSource()">任务列表</button>
+                <button class="cyber-btn accent" onclick="viewTask({{task.id}})">返回漏洞列表</button>
+            </div>
+        </div>
+
+        <div class="cyber-divider"></div>
+
+        <h2 class="cyber-heading">大模型漏洞验证智能体</h2>
+
+        <div class="cyber-chatbox" id="llm-chatbox">
+            <div class="message bot-message cyber-glitch">
+                <span class="neon-text">你好！我是你的智能漏洞挖掘助手，随时准备为你提供帮助。有什么问题或需要解答的，尽管告诉我吧！</span>💻
+            </div>
+        </div>
+
+        <div class="input-group">
+            <textarea class="cyber-input" id="llm">{{ prompt }}</textarea>
+            <div class="action-buttons">
+                <button class="cyber-btn primary pulse" onclick="chatWithLLM({{task.id}})">发送</button>
+                <button class="cyber-btn danger" onclick="savePoC({{bug.id}})">保存PoC</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

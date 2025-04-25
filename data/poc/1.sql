@@ -1,0 +1,1 @@
+SELECT concat_ws(REPEAT('A', 214748364), 'string0', 'string1', 'string2', 'string3', 'string4', 'string5', 'string6', 'string7', 'string8', 'string9', 'string10', 'string11', 'string12', 'string13', 'string14', 'string15', 'string16', 'string17', 'string18', 'string19', 'string20', 'string21', 'string22', 'string23', 'string24');

@@ -1,0 +1,36 @@
+[2025-04-08 15:40:49] This is codeql database analyze /home/jgz/data/db/123 --format=CSV --output=/home/jgz/data/result/123.csv --download codeql/cpp-queries
+[2025-04-08 15:40:49] Log file was started late.
+[2025-04-08 15:40:49] [DETAILS] database analyze> Downloading queries...
+[2025-04-08 15:40:49] Running plumbing command: codeql pack download --format json --qlconfig-file=/home/jgz/vulmine/qlconfig.yml -- codeql/cpp-queries
+[2025-04-08 15:40:49] [PROGRESS] pack download> Package specifications to check for download: codeql/cpp-queries
+[2025-04-08 15:40:49] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/jgz/vulmine/qlconfig.yml --format installedpacks codeql/cpp-queries
+[2025-04-08 15:40:49] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/jgz/.codeql/packages/codeql/cpp-queries/1.3.7.
+[2025-04-08 15:40:49] Plumbing command codeql resolve queries completed:
+                      {
+                        "installedPacks" : [
+                          "codeql/cpp-queries@latest"
+                        ]
+                      }
+[2025-04-08 15:40:49] [DETAILS] pack download> Packaging> Requesting package versions of codeql/cpp-queries from https://ghcr.io/v2/codeql/cpp-queries/tags/list?n=100
+[2025-04-08 15:40:49] [DETAILS] pack download> Packaging> GET Anonymous credentials 'https://ghcr.io/token?scope=repository:codeql/cpp-queries:pull'
+[2025-04-08 15:40:50] [DETAILS] pack download> Packaging> RESPONSE 'HTTP/1.1 200 OK'
+[2025-04-08 15:40:51] [PROGRESS] pack download> Did not need to download any packs.
+[2025-04-08 15:40:51] Plumbing command codeql pack download completed.
+[2025-04-08 15:40:51] [PROGRESS] database analyze> Running queries.
+[2025-04-08 15:40:51] Running plumbing command: codeql database run-queries --evaluator-log-level=5 --warnings=show --dynamic-join-order-mode=none --qlconfig-file=/home/jgz/vulmine/qlconfig.yml --no-rerun --interpret-passthrough=null,--format=csv,-o=/home/jgz/data/result/123.csv,--max-paths=4,--csv-location-format=line-column,--print-diagnostics-summary,--print-metrics-summary,--qlconfig-file=/home/jgz/vulmine/qlconfig.yml,--,/home/jgz/data/db/123,codeql/cpp-queries -- /home/jgz/data/db/123 codeql/cpp-queries
+[2025-04-08 15:40:51] Exception caught at top level: Database at /home/jgz/data/db/123 needs to be finalized before running queries; please run codeql database finalize
+                      com.semmle.cli2.database.RunQueriesCommand.executeSubcommand(RunQueriesCommand.java:233)
+                      com.semmle.cli2.picocli.SubcommandCommon.lambda$executeSubcommandWithMessages$5(SubcommandCommon.java:892)
+                      com.semmle.cli2.picocli.SubcommandCommon.withCompilationMessages(SubcommandCommon.java:444)
+                      com.semmle.cli2.picocli.SubcommandCommon.executeSubcommandWithMessages(SubcommandCommon.java:890)
+                      com.semmle.cli2.picocli.PlumbingRunner.run(PlumbingRunner.java:119)
+                      com.semmle.cli2.picocli.SubcommandCommon.execPlumbingInProcess(SubcommandCommon.java:229)
+                      com.semmle.cli2.database.AnalyzeCommand.executeSubcommand(AnalyzeCommand.java:167)
+                      com.semmle.cli2.picocli.SubcommandCommon.lambda$executeSubcommandWithMessages$5(SubcommandCommon.java:892)
+                      com.semmle.cli2.picocli.SubcommandCommon.withCompilationMessages(SubcommandCommon.java:444)
+                      com.semmle.cli2.picocli.SubcommandCommon.executeSubcommandWithMessages(SubcommandCommon.java:890)
+                      com.semmle.cli2.picocli.SubcommandCommon.toplevelMain(SubcommandCommon.java:777)
+                      com.semmle.cli2.picocli.SubcommandCommon.call(SubcommandCommon.java:757)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:238)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:259)
+                      com.semmle.cli2.CodeQL.main(CodeQL.java:115)

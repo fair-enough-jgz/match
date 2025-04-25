@@ -1,0 +1,48 @@
+[2025-03-18 17:48:01] This is codeql execute queries -J-Xmx12838M --off-heap-ram=15971 --verbosity=progress --logdir=/home/wjj/data/db/sqlite/log --evaluator-log-level=5 --warnings=show --dynamic-join-order-mode=none --qlconfig-file=/home/wjj/qlconfig.yml --output=/home/wjj/data/result.bqrs -- /home/wjj/data/db/sqlite/db-cpp path:/home/wjj/.codeql/packages/codeql/cpp-queries/1.3.5/getFunctionByLinenumber.ql
+[2025-03-18 17:48:01] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/wjj/qlconfig.yml --format=json -- path:/home/wjj/.codeql/packages/codeql/cpp-queries/1.3.5/getFunctionByLinenumber.ql
+[2025-03-18 17:48:01] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/wjj/.codeql/packages/codeql/cpp-queries/1.3.5.
+[2025-03-18 17:48:01] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/wjj/.codeql/packages/codeql/cpp-queries/1.3.5/getFunctionByLinenumber.ql"
+                      ]
+[2025-03-18 17:48:01] Refusing fancy output: $CODEQL_ISATTY terminal indication is missing
+[2025-03-18 17:48:01] Creating executor with 1 threads.
+[2025-03-18 17:48:01] Exception caught at top level: Error initializing the IMB disk cache: the cache directory is already locked by another running process. Only one instance of the IMB can access a cache directory at a time. The lock file is located at /home/wjj/data/db/sqlite/db-cpp/default/cache/.lock
+                      (eventual cause: OverlappingFileLockException)
+                      com.semmle.inmemory.caching.RelationCacheImpl.takeFilesystemLock(RelationCacheImpl.java:362)
+                      com.semmle.inmemory.caching.RelationCacheImpl.create(RelationCacheImpl.java:114)
+                      com.semmle.inmemory.scheduler.EvaluationSchedule.<init>(EvaluationSchedule.java:100)
+                      com.semmle.inmemory.caching.RelationManager.<init>(RelationManager.java:64)
+                      com.semmle.inmemory.MemoryBackend.<init>(MemoryBackend.java:119)
+                      com.semmle.cli2.ql.EvaluationCommon.<init>(EvaluationCommon.java:96)
+                      com.semmle.cli2.ql.EvaluationCommon.<init>(EvaluationCommon.java:66)
+                      com.semmle.cli2.execute.ExecuteQueriesCommand.executeSubcommand(ExecuteQueriesCommand.java:467)
+                      com.semmle.cli2.picocli.SubcommandCommon.lambda$executeSubcommandWithMessages$5(SubcommandCommon.java:892)
+                      com.semmle.cli2.picocli.SubcommandCommon.withCompilationMessages(SubcommandCommon.java:444)
+                      com.semmle.cli2.picocli.SubcommandCommon.executeSubcommandWithMessages(SubcommandCommon.java:890)
+                      com.semmle.cli2.picocli.SubcommandCommon.toplevelMain(SubcommandCommon.java:777)
+                      com.semmle.cli2.picocli.SubcommandCommon.call(SubcommandCommon.java:757)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:238)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:259)
+                      com.semmle.cli2.CodeQL.main(CodeQL.java:115)
+                      
+                       ... caused by:
+                      
+                      java.nio.channels.OverlappingFileLockException
+                      com.semmle.util.files.FileSystemLock.<init>(FileSystemLock.java:74)
+                      com.semmle.inmemory.caching.RelationCacheImpl.takeFilesystemLock(RelationCacheImpl.java:358)
+                      com.semmle.inmemory.caching.RelationCacheImpl.create(RelationCacheImpl.java:114)
+                      com.semmle.inmemory.scheduler.EvaluationSchedule.<init>(EvaluationSchedule.java:100)
+                      com.semmle.inmemory.caching.RelationManager.<init>(RelationManager.java:64)
+                      com.semmle.inmemory.MemoryBackend.<init>(MemoryBackend.java:119)
+                      com.semmle.cli2.ql.EvaluationCommon.<init>(EvaluationCommon.java:96)
+                      com.semmle.cli2.ql.EvaluationCommon.<init>(EvaluationCommon.java:66)
+                      com.semmle.cli2.execute.ExecuteQueriesCommand.executeSubcommand(ExecuteQueriesCommand.java:467)
+                      com.semmle.cli2.picocli.SubcommandCommon.lambda$executeSubcommandWithMessages$5(SubcommandCommon.java:892)
+                      com.semmle.cli2.picocli.SubcommandCommon.withCompilationMessages(SubcommandCommon.java:444)
+                      com.semmle.cli2.picocli.SubcommandCommon.executeSubcommandWithMessages(SubcommandCommon.java:890)
+                      com.semmle.cli2.picocli.SubcommandCommon.toplevelMain(SubcommandCommon.java:777)
+                      com.semmle.cli2.picocli.SubcommandCommon.call(SubcommandCommon.java:757)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:238)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:259)
+                      com.semmle.cli2.CodeQL.main(CodeQL.java:115)

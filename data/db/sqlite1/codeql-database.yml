@@ -1,0 +1,11 @@
+---
+sourceLocationPrefix: /home/wjj/data/code/sqlite
+baselineLinesOfCode: 522277
+unicodeNewlines: false
+columnKind: utf8
+primaryLanguage: cpp
+creationMetadata:
+  sha: e89f31f19ab45dcb939a1ecf0ef5113b27a25868
+  cliVersion: 2.20.5
+  creationTime: 2025-03-17T08:17:54.484681813Z
+finalised: true

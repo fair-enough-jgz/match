@@ -1,0 +1,13 @@
+---
+library: true
+warnOnImplicitThis: true
+name: codeql/mad
+version: 1.0.19
+buildMetadata:
+  sha: 0ac0dad49df9d1a7312918ca897b277209dea046
+  cliVersion: 2.20.7
+dependencies:
+  codeql/dataflow: 2.0.3
+  codeql/util: 2.0.6
+groups:
+ - shared

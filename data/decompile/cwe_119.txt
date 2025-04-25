@@ -1,0 +1,370 @@
+Function at address: 0x00101000
+
+
+int _init(EVP_PKEY_CTX *ctx)
+
+{
+undefined *puVar1;
+
+puVar1 = PTR___gmon_start___00103fd0;
+if (PTR___gmon_start___00103fd0 != (undefined *)0x0) {
+puVar1 = (undefined *)(*(code *)PTR___gmon_start___00103fd0)();
+}
+return (int)puVar1;
+}
+=========================================
+Function at address: 0x00101020
+
+
+void FUN_00101020(void)
+
+{
+(*(code *)PTR_00103ff8)();
+return;
+}
+=========================================
+Function at address: 0x00101030
+
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+void free(void *__ptr)
+
+{
+(*(code *)PTR_free_00104000)();
+return;
+}
+=========================================
+Function at address: 0x00101040
+
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int puts(char *__s)
+
+{
+int iVar1;
+
+iVar1 = (*(code *)PTR_puts_00104008)();
+return iVar1;
+}
+=========================================
+Function at address: 0x00101050
+
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int printf(char *__format,...)
+
+{
+int iVar1;
+
+iVar1 = (*(code *)PTR_printf_00104010)();
+return iVar1;
+}
+=========================================
+Function at address: 0x00101060
+
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+void * calloc(size_t __nmemb,size_t __size)
+
+{
+void *pvVar1;
+
+pvVar1 = (void *)(*(code *)PTR_calloc_00104018)();
+return pvVar1;
+}
+=========================================
+Function at address: 0x00101070
+
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+void * malloc(size_t __size)
+
+{
+void *pvVar1;
+
+pvVar1 = (void *)(*_DAT_00104020)();
+return pvVar1;
+}
+=========================================
+Function at address: 0x00101080
+
+
+void __cxa_finalize(void)
+
+{
+(*(code *)PTR___cxa_finalize_00103fe0)();
+return;
+}
+=========================================
+Function at address: 0x00101090
+
+
+void processEntry _start(undefined8 param_1,undefined8 param_2)
+
+{
+undefined auStack_8 [8];
+
+(*(code *)PTR___libc_start_main_00103fc0)(main,param_2,&stack0x00000008,0,0,param_1,auStack_8);
+do {
+/* WARNING: Do nothing block with infinite loop */
+} while( true );
+}
+=========================================
+Function at address: 0x001010c0
+
+
+/* WARNING: Removing unreachable block (ram,0x001010d3) */
+/* WARNING: Removing unreachable block (ram,0x001010df) */
+
+void deregister_tm_clones(void)
+
+{
+return;
+}
+=========================================
+Function at address: 0x001010f0
+
+
+/* WARNING: Removing unreachable block (ram,0x00101114) */
+/* WARNING: Removing unreachable block (ram,0x00101120) */
+
+void register_tm_clones(void)
+
+{
+return;
+}
+=========================================
+Function at address: 0x00101130
+
+
+void __do_global_dtors_aux(void)
+
+{
+if (completed_0 == '\0') {
+if (PTR___cxa_finalize_00103fe0 != (undefined *)0x0) {
+__cxa_finalize(__dso_handle);
+}
+deregister_tm_clones();
+completed_0 = 1;
+return;
+}
+return;
+}
+=========================================
+Function at address: 0x00101170
+
+
+void frame_dummy(void)
+
+{
+register_tm_clones();
+return;
+}
+=========================================
+Function at address: 0x00101179
+
+
+void set_array_elements(long param_1)
+
+{
+undefined4 local_c;
+
+for (local_c = 0; local_c < 0xb; local_c = local_c + 1) {
+*(int *)((long)local_c * 4 + param_1) = local_c * local_c;
+}
+return;
+}
+=========================================
+Function at address: 0x001011b4
+
+
+void print_array_sum(long param_1)
+
+{
+int local_10;
+uint local_c;
+
+local_c = 0;
+for (local_10 = 0; local_10 < 0xb; local_10 = local_10 + 1) {
+local_c = local_c + *(int *)(param_1 + (long)local_10 * 4);
+}
+printf("%d\n",(ulong)local_c);
+return;
+}
+=========================================
+Function at address: 0x0010120f
+
+
+undefined8 main(void)
+
+{
+void *pvVar1;
+int local_14;
+uint local_10;
+int local_c;
+
+pvVar1 = calloc(5,4);
+for (local_c = 0; local_c < 0xb; local_c = local_c + 1) {
+*(int *)((long)local_c * 4 + (long)pvVar1) = local_c * local_c;
+}
+set_array_elements(pvVar1);
+free(pvVar1);
+pvVar1 = malloc(0x14);
+local_10 = 0;
+for (local_14 = 0; local_14 < 0xb; local_14 = local_14 + 1) {
+local_10 = local_10 + *(int *)((long)pvVar1 + (long)local_14 * 4);
+}
+printf("%d\n",(ulong)local_10);
+print_array_sum(pvVar1);
+puts((char *)((long)pvVar1 + -1));
+free(pvVar1);
+return 0;
+}
+=========================================
+Function at address: 0x001012fc
+
+
+void _fini(void)
+
+{
+return;
+}
+=========================================
+Function at address: 0x00105000
+
+
+/* WARNING: Control flow encountered bad instruction data */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+void free(void *__ptr)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* free@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105008
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __libc_start_main(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* __libc_start_main@GLIBC_2.34 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105010
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void _ITM_deregisterTMCloneTable(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105018
+
+
+/* WARNING: Control flow encountered bad instruction data */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int puts(char *__s)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* puts@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105020
+
+
+/* WARNING: Control flow encountered bad instruction data */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+int printf(char *__format,...)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* printf@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105028
+
+
+/* WARNING: Control flow encountered bad instruction data */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+void * calloc(size_t __nmemb,size_t __size)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* calloc@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105030
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __gmon_start__(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105038
+
+
+/* WARNING: Control flow encountered bad instruction data */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+void * malloc(size_t __size)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* malloc@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105040
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void _ITM_registerTMCloneTable(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+halt_baddata();
+}
+=========================================
+Function at address: 0x00105048
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void __cxa_finalize(void)
+
+{
+/* WARNING: Bad instruction - Truncating control flow here */
+/* __cxa_finalize@GLIBC_2.2.5 */
+halt_baddata();
+}
+=========================================

@@ -1,0 +1,1487 @@
+[2025-04-14 21:08:08] This is codeql execute queries -J-Xmx1297M --verbosity=progress --logdir=/home/jgz/data/db/sq/log --evaluator-log-level=5 --warnings=show --dynamic-join-order-mode=none --qlconfig-file=/home/jgz/vulmine/qlconfig.yml --output=/home/jgz/data/result.bqrs -- /home/jgz/data/db/sq/db-cpp path:/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql
+[2025-04-14 21:08:08] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/jgz/vulmine/qlconfig.yml --format=json -- path:/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql
+[2025-04-14 21:08:08] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6.
+[2025-04-14 21:08:08] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql"
+                      ]
+[2025-04-14 21:08:08] Refusing fancy output: $CODEQL_ISATTY terminal indication is missing
+[2025-04-14 21:08:08] Creating executor with 1 threads.
+[2025-04-14 21:08:09] Calling plumbing command: codeql resolve extensions --qlconfig-file=/home/jgz/vulmine/qlconfig.yml --include-extension-row-locations path:/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql
+[2025-04-14 21:08:09] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/jgz/vulmine/qlconfig.yml --allow-library-packs --format startingpacks -- path:/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql
+[2025-04-14 21:08:09] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6.
+[2025-04-14 21:08:09] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6"
+                      ]
+[2025-04-14 21:08:09] Calling plumbing command: codeql resolve extensions-by-pack --qlconfig-file=/home/jgz/vulmine/qlconfig.yml --include-extension-row-locations -- /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: not 1.3.6 {root: codeql/cpp-queries@1.3.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/cpp-queries: 1.3.6 {codeql/cpp-queries: not 1.3.6 {root: codeql/cpp-queries@1.3.6}}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@4.0.3}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DECISION 1] codeql/cpp-queries: 1.3.6
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/util: * [*] {codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@2.0.6}}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/suite-helpers: * [*] {codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/cpp-all: * [*] {codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@4.0.3}}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@2.0.3}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/mad: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/mad@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/typeflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/typeflow@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/util: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/xml: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/xml@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DECISION 2] codeql/cpp-all: 4.0.3
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/xml: * [*] {codeql/cpp-all: * [*], codeql/xml: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/xml@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/typeflow: * [*] {codeql/cpp-all: * [*], codeql/typeflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/typeflow@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/tutorial: * [*] {codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/ssa: * [*] {codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/rangeanalysis: * [*] {codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/mad: * [*] {codeql/cpp-all: * [*], codeql/mad: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/mad@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/dataflow: * [*] {codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@2.0.3}}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@2.0.3}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/util: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DECISION 3] codeql/dataflow: 2.0.3
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/typetracking: * [*] {codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@2.0.3}}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/mad: * [*], codeql/dataflow: not * [*] {dependency: codeql/mad@* [*] requires codeql/dataflow@2.0.3}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/mad: * [*], codeql/util: not * [*] {dependency: codeql/mad@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DECISION 4] codeql/mad: 1.0.19
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/rangeanalysis: * [*], codeql/util: not * [*] {dependency: codeql/rangeanalysis@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DECISION 5] codeql/rangeanalysis: 1.0.19
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/util: not * [*] {dependency: codeql/ssa@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DECISION 6] codeql/ssa: 1.0.19
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DECISION 7] codeql/suite-helpers: 1.0.19
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DECISION 8] codeql/tutorial: 1.0.19
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/typeflow: * [*], codeql/util: not * [*] {dependency: codeql/typeflow@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DECISION 9] codeql/typeflow: 1.0.19
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/typetracking: * [*], codeql/util: not * [*] {dependency: codeql/typetracking@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DECISION 10] codeql/typetracking: 2.0.3
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DECISION 11] codeql/util: 2.0.6
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/xml: * [*], codeql/util: not * [*] {dependency: codeql/xml@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve extensions-by-pack> [DECISION 12] codeql/xml: 1.0.19
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/Boost.Asio.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:sourceModel: 6 tuples.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:sinkModel: 4 tuples.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 1 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CA2CAEX.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 13 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlArray.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 10 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlFile.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 4 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlFileMappingBase.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 9 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlList.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 10 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlTemporaryFile.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 3 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CComBSTR.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 28 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CComSafeArray.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 21 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CPathT.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 15 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CRegKey.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 15 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CSimpleArray.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 7 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CSimpleMap.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 8 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CSimpleStringT.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 37 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CStrBufT.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 3 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CStringData.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 1 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CStringT.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 113 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CUrl.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 17 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/Bsd.allocation.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:allocationFunctionModel: 2 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/Glibc.allocation.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:allocationFunctionModel: 2 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/OpenSSL.allocation.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:allocationFunctionModel: 4 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/Std.allocation.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:allocationFunctionModel: 10 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/Windows.allocation.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:allocationFunctionModel: 24 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/empty.allocation.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:allocationFunctionModel: 0 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.array.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 9 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.deque.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 69 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.forward_list.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 52 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.list.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 67 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.vector.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 56 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/deallocation/Bsd.deallocation.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:deallocationFunctionModel: 3 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/deallocation/Std.deallocation.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:deallocationFunctionModel: 37 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/deallocation/Windows.deallocation.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:deallocationFunctionModel: 36 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/deallocation/empty.deallocation.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:deallocationFunctionModel: 0 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/empty.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:sourceModel: 0 tuples.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:sinkModel: 0 tuples.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 0 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/oleauto.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 3 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.array.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 9 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.deque.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 69 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.format.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 9 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.forward_list.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 52 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.iterator.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 6 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.list.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 67 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.vector.model.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/cpp-all:summaryModel: 56 tuples.
+[2025-04-14 21:08:09] [PROGRESS] resolve extensions-by-pack> Loading data extensions in /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/util/2.0.6/ext/default-alert-filter.yml.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/util:restrictAlertsTo: 0 tuples.
+[2025-04-14 21:08:09] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/util:restrictAlertsToExactLocation: 0 tuples.
+[2025-04-14 21:08:09] Plumbing command codeql resolve extensions-by-pack completed:
+                      {
+                        "models" : [ ],
+                        "data" : {
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6" : [
+                            {
+                              "predicate" : "sourceModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/Boost.Asio.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 0,
+                              "rowCount" : 6,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=7+1*5",
+                                "columnNumbers" : "A=9*6"
+                              }
+                            },
+                            {
+                              "predicate" : "sinkModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/Boost.Asio.model.yml",
+                              "index" : 1,
+                              "firstRowId" : 6,
+                              "rowCount" : 4,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=17+1*3",
+                                "columnNumbers" : "A=9*4"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/Boost.Asio.model.yml",
+                              "index" : 2,
+                              "firstRowId" : 10,
+                              "rowCount" : 1,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=25",
+                                "columnNumbers" : "A=9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CA2CAEX.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 11,
+                              "rowCount" : 13,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*12",
+                                "columnNumbers" : "A=9*13"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlArray.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 24,
+                              "rowCount" : 10,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*9",
+                                "columnNumbers" : "A=9*10"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlFile.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 34,
+                              "rowCount" : 4,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*3",
+                                "columnNumbers" : "A=9*4"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlFileMappingBase.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 38,
+                              "rowCount" : 9,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*8",
+                                "columnNumbers" : "A=9*9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlList.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 47,
+                              "rowCount" : 10,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*9",
+                                "columnNumbers" : "A=9*10"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlTemporaryFile.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 57,
+                              "rowCount" : 3,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*2",
+                                "columnNumbers" : "A=9*3"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CComBSTR.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 60,
+                              "rowCount" : 28,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*27",
+                                "columnNumbers" : "A=9*28"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CComSafeArray.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 88,
+                              "rowCount" : 21,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*20",
+                                "columnNumbers" : "A=9*21"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CPathT.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 109,
+                              "rowCount" : 15,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*10+4+1*3",
+                                "columnNumbers" : "A=9*15"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CRegKey.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 124,
+                              "rowCount" : 15,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*14",
+                                "columnNumbers" : "A=9*15"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CSimpleArray.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 139,
+                              "rowCount" : 7,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*6",
+                                "columnNumbers" : "A=9*7"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CSimpleMap.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 146,
+                              "rowCount" : 8,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*7",
+                                "columnNumbers" : "A=9*8"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CSimpleStringT.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 154,
+                              "rowCount" : 37,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*36",
+                                "columnNumbers" : "A=9*37"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CStrBufT.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 191,
+                              "rowCount" : 3,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*2",
+                                "columnNumbers" : "A=9*3"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CStringData.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 194,
+                              "rowCount" : 1,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6",
+                                "columnNumbers" : "A=9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CStringT.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 195,
+                              "rowCount" : 113,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*112",
+                                "columnNumbers" : "A=9*113"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CUrl.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 308,
+                              "rowCount" : 17,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*16",
+                                "columnNumbers" : "A=9*17"
+                              }
+                            },
+                            {
+                              "predicate" : "allocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/Bsd.allocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 325,
+                              "rowCount" : 2,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1",
+                                "columnNumbers" : "A=9*2"
+                              }
+                            },
+                            {
+                              "predicate" : "allocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/Glibc.allocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 327,
+                              "rowCount" : 2,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1",
+                                "columnNumbers" : "A=9*2"
+                              }
+                            },
+                            {
+                              "predicate" : "allocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/OpenSSL.allocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 329,
+                              "rowCount" : 4,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*3",
+                                "columnNumbers" : "A=9*4"
+                              }
+                            },
+                            {
+                              "predicate" : "allocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/Std.allocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 333,
+                              "rowCount" : 10,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*9",
+                                "columnNumbers" : "A=9*10"
+                              }
+                            },
+                            {
+                              "predicate" : "allocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/Windows.allocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 343,
+                              "rowCount" : 24,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*23",
+                                "columnNumbers" : "A=9*24"
+                              }
+                            },
+                            {
+                              "predicate" : "allocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/empty.allocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 367,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.array.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 367,
+                              "rowCount" : 9,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*8",
+                                "columnNumbers" : "A=9*9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.deque.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 376,
+                              "rowCount" : 69,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*68",
+                                "columnNumbers" : "A=9*69"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.forward_list.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 445,
+                              "rowCount" : 52,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*51",
+                                "columnNumbers" : "A=9*52"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.list.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 497,
+                              "rowCount" : 67,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*66",
+                                "columnNumbers" : "A=9*67"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.vector.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 564,
+                              "rowCount" : 56,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*55",
+                                "columnNumbers" : "A=9*56"
+                              }
+                            },
+                            {
+                              "predicate" : "deallocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/deallocation/Bsd.deallocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 620,
+                              "rowCount" : 3,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*2",
+                                "columnNumbers" : "A=9*3"
+                              }
+                            },
+                            {
+                              "predicate" : "deallocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/deallocation/Std.deallocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 623,
+                              "rowCount" : 37,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*36",
+                                "columnNumbers" : "A=9*37"
+                              }
+                            },
+                            {
+                              "predicate" : "deallocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/deallocation/Windows.deallocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 660,
+                              "rowCount" : 36,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*35",
+                                "columnNumbers" : "A=9*36"
+                              }
+                            },
+                            {
+                              "predicate" : "deallocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/deallocation/empty.deallocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 696,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "sourceModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/empty.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 696,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "sinkModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/empty.model.yml",
+                              "index" : 1,
+                              "firstRowId" : 696,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/empty.model.yml",
+                              "index" : 2,
+                              "firstRowId" : 696,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/oleauto.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 696,
+                              "rowCount" : 3,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*2",
+                                "columnNumbers" : "A=9*3"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.array.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 699,
+                              "rowCount" : 9,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*8",
+                                "columnNumbers" : "A=9*9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.deque.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 708,
+                              "rowCount" : 69,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*68",
+                                "columnNumbers" : "A=9*69"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.format.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 777,
+                              "rowCount" : 9,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*8",
+                                "columnNumbers" : "A=9*9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.forward_list.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 786,
+                              "rowCount" : 52,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*51",
+                                "columnNumbers" : "A=9*52"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.iterator.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 838,
+                              "rowCount" : 6,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*5",
+                                "columnNumbers" : "A=9*6"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.list.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 844,
+                              "rowCount" : 67,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*66",
+                                "columnNumbers" : "A=9*67"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.vector.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 911,
+                              "rowCount" : 56,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*55",
+                                "columnNumbers" : "A=9*56"
+                              }
+                            },
+                            {
+                              "predicate" : "restrictAlertsTo",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/util/2.0.6/ext/default-alert-filter.yml",
+                              "index" : 0,
+                              "firstRowId" : 967,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "restrictAlertsToExactLocation",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/util/2.0.6/ext/default-alert-filter.yml",
+                              "index" : 1,
+                              "firstRowId" : 967,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            }
+                          ]
+                        },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2025-04-14 21:08:09] Plumbing command codeql resolve extensions completed:
+                      {
+                        "models" : [ ],
+                        "data" : {
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6" : [
+                            {
+                              "predicate" : "sourceModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/Boost.Asio.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 0,
+                              "rowCount" : 6,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=7+1*5",
+                                "columnNumbers" : "A=9*6"
+                              }
+                            },
+                            {
+                              "predicate" : "sinkModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/Boost.Asio.model.yml",
+                              "index" : 1,
+                              "firstRowId" : 6,
+                              "rowCount" : 4,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=17+1*3",
+                                "columnNumbers" : "A=9*4"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/Boost.Asio.model.yml",
+                              "index" : 2,
+                              "firstRowId" : 10,
+                              "rowCount" : 1,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=25",
+                                "columnNumbers" : "A=9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CA2CAEX.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 11,
+                              "rowCount" : 13,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*12",
+                                "columnNumbers" : "A=9*13"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlArray.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 24,
+                              "rowCount" : 10,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*9",
+                                "columnNumbers" : "A=9*10"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlFile.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 34,
+                              "rowCount" : 4,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*3",
+                                "columnNumbers" : "A=9*4"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlFileMappingBase.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 38,
+                              "rowCount" : 9,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*8",
+                                "columnNumbers" : "A=9*9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlList.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 47,
+                              "rowCount" : 10,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*9",
+                                "columnNumbers" : "A=9*10"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CAtlTemporaryFile.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 57,
+                              "rowCount" : 3,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*2",
+                                "columnNumbers" : "A=9*3"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CComBSTR.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 60,
+                              "rowCount" : 28,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*27",
+                                "columnNumbers" : "A=9*28"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CComSafeArray.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 88,
+                              "rowCount" : 21,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*20",
+                                "columnNumbers" : "A=9*21"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CPathT.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 109,
+                              "rowCount" : 15,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*10+4+1*3",
+                                "columnNumbers" : "A=9*15"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CRegKey.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 124,
+                              "rowCount" : 15,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*14",
+                                "columnNumbers" : "A=9*15"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CSimpleArray.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 139,
+                              "rowCount" : 7,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*6",
+                                "columnNumbers" : "A=9*7"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CSimpleMap.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 146,
+                              "rowCount" : 8,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*7",
+                                "columnNumbers" : "A=9*8"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CSimpleStringT.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 154,
+                              "rowCount" : 37,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*36",
+                                "columnNumbers" : "A=9*37"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CStrBufT.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 191,
+                              "rowCount" : 3,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*2",
+                                "columnNumbers" : "A=9*3"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CStringData.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 194,
+                              "rowCount" : 1,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6",
+                                "columnNumbers" : "A=9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CStringT.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 195,
+                              "rowCount" : 113,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*112",
+                                "columnNumbers" : "A=9*113"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/CUrl.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 308,
+                              "rowCount" : 17,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*16",
+                                "columnNumbers" : "A=9*17"
+                              }
+                            },
+                            {
+                              "predicate" : "allocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/Bsd.allocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 325,
+                              "rowCount" : 2,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1",
+                                "columnNumbers" : "A=9*2"
+                              }
+                            },
+                            {
+                              "predicate" : "allocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/Glibc.allocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 327,
+                              "rowCount" : 2,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1",
+                                "columnNumbers" : "A=9*2"
+                              }
+                            },
+                            {
+                              "predicate" : "allocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/OpenSSL.allocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 329,
+                              "rowCount" : 4,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*3",
+                                "columnNumbers" : "A=9*4"
+                              }
+                            },
+                            {
+                              "predicate" : "allocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/Std.allocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 333,
+                              "rowCount" : 10,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*9",
+                                "columnNumbers" : "A=9*10"
+                              }
+                            },
+                            {
+                              "predicate" : "allocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/Windows.allocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 343,
+                              "rowCount" : 24,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*23",
+                                "columnNumbers" : "A=9*24"
+                              }
+                            },
+                            {
+                              "predicate" : "allocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/allocation/empty.allocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 367,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.array.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 367,
+                              "rowCount" : 9,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*8",
+                                "columnNumbers" : "A=9*9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.deque.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 376,
+                              "rowCount" : 69,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*68",
+                                "columnNumbers" : "A=9*69"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.forward_list.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 445,
+                              "rowCount" : 52,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*51",
+                                "columnNumbers" : "A=9*52"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.list.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 497,
+                              "rowCount" : 67,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*66",
+                                "columnNumbers" : "A=9*67"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/bsl.vector.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 564,
+                              "rowCount" : 56,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*55",
+                                "columnNumbers" : "A=9*56"
+                              }
+                            },
+                            {
+                              "predicate" : "deallocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/deallocation/Bsd.deallocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 620,
+                              "rowCount" : 3,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*2",
+                                "columnNumbers" : "A=9*3"
+                              }
+                            },
+                            {
+                              "predicate" : "deallocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/deallocation/Std.deallocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 623,
+                              "rowCount" : 37,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*36",
+                                "columnNumbers" : "A=9*37"
+                              }
+                            },
+                            {
+                              "predicate" : "deallocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/deallocation/Windows.deallocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 660,
+                              "rowCount" : 36,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*35",
+                                "columnNumbers" : "A=9*36"
+                              }
+                            },
+                            {
+                              "predicate" : "deallocationFunctionModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/deallocation/empty.deallocation.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 696,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "sourceModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/empty.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 696,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "sinkModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/empty.model.yml",
+                              "index" : 1,
+                              "firstRowId" : 696,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/empty.model.yml",
+                              "index" : 2,
+                              "firstRowId" : 696,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/oleauto.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 696,
+                              "rowCount" : 3,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*2",
+                                "columnNumbers" : "A=9*3"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.array.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 699,
+                              "rowCount" : 9,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*8",
+                                "columnNumbers" : "A=9*9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.deque.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 708,
+                              "rowCount" : 69,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*68",
+                                "columnNumbers" : "A=9*69"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.format.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 777,
+                              "rowCount" : 9,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*8",
+                                "columnNumbers" : "A=9*9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.forward_list.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 786,
+                              "rowCount" : 52,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*51",
+                                "columnNumbers" : "A=9*52"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.iterator.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 838,
+                              "rowCount" : 6,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*5",
+                                "columnNumbers" : "A=9*6"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.list.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 844,
+                              "rowCount" : 67,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*66",
+                                "columnNumbers" : "A=9*67"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/ext/std.vector.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 911,
+                              "rowCount" : 56,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*55",
+                                "columnNumbers" : "A=9*56"
+                              }
+                            },
+                            {
+                              "predicate" : "restrictAlertsTo",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/util/2.0.6/ext/default-alert-filter.yml",
+                              "index" : 0,
+                              "firstRowId" : 967,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "restrictAlertsToExactLocation",
+                              "file" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/util/2.0.6/ext/default-alert-filter.yml",
+                              "index" : 1,
+                              "firstRowId" : 967,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            }
+                          ]
+                        },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2025-04-14 21:08:09] Calling plumbing command: codeql resolve library-path --qlconfig-file=/home/jgz/vulmine/qlconfig.yml --query=/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql --format=json
+[2025-04-14 21:08:09] [DETAILS] resolve library-path> Resolving query at normalized path /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql.
+[2025-04-14 21:08:09] [DETAILS] resolve library-path> Found enclosing pack 'codeql/cpp-queries' at /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6.
+[2025-04-14 21:08:09] [DETAILS] resolve library-path> Adding compilation cache at /home/jgz/.codeql/compile-cache.
+[2025-04-14 21:08:09] [DETAILS] resolve library-path> Resolving library dependencies from /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/qlpack.yml.
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: not 1.3.6 {root: codeql/cpp-queries@1.3.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DERIVATION] codeql/cpp-queries: 1.3.6 {codeql/cpp-queries: not 1.3.6 {root: codeql/cpp-queries@1.3.6}}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@4.0.3}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DECISION 1] codeql/cpp-queries: 1.3.6
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DERIVATION] codeql/util: * [*] {codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@2.0.6}}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DERIVATION] codeql/suite-helpers: * [*] {codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DERIVATION] codeql/cpp-all: * [*] {codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@4.0.3}}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@2.0.3}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/mad: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/mad@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/typeflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/typeflow@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/util: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/xml: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/xml@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DECISION 2] codeql/cpp-all: 4.0.3
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DERIVATION] codeql/xml: * [*] {codeql/cpp-all: * [*], codeql/xml: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/xml@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DERIVATION] codeql/typeflow: * [*] {codeql/cpp-all: * [*], codeql/typeflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/typeflow@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DERIVATION] codeql/tutorial: * [*] {codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DERIVATION] codeql/ssa: * [*] {codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DERIVATION] codeql/rangeanalysis: * [*] {codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DERIVATION] codeql/mad: * [*] {codeql/cpp-all: * [*], codeql/mad: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/mad@1.0.19}}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DERIVATION] codeql/dataflow: * [*] {codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@2.0.3}}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@1.0.19}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@2.0.3}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/util: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DECISION 3] codeql/dataflow: 2.0.3
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DERIVATION] codeql/typetracking: * [*] {codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@2.0.3}}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/mad: * [*], codeql/dataflow: not * [*] {dependency: codeql/mad@* [*] requires codeql/dataflow@2.0.3}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/mad: * [*], codeql/util: not * [*] {dependency: codeql/mad@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DECISION 4] codeql/mad: 1.0.19
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/rangeanalysis: * [*], codeql/util: not * [*] {dependency: codeql/rangeanalysis@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DECISION 5] codeql/rangeanalysis: 1.0.19
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/util: not * [*] {dependency: codeql/ssa@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DECISION 6] codeql/ssa: 1.0.19
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DECISION 7] codeql/suite-helpers: 1.0.19
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DECISION 8] codeql/tutorial: 1.0.19
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/typeflow: * [*], codeql/util: not * [*] {dependency: codeql/typeflow@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DECISION 9] codeql/typeflow: 1.0.19
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/typetracking: * [*], codeql/util: not * [*] {dependency: codeql/typetracking@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DECISION 10] codeql/typetracking: 2.0.3
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DECISION 11] codeql/util: 2.0.6
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/xml: * [*], codeql/util: not * [*] {dependency: codeql/xml@* [*] requires codeql/util@2.0.6}
+[2025-04-14 21:08:09] [SPAMMY] resolve library-path> [DECISION 12] codeql/xml: 1.0.19
+[2025-04-14 21:08:09] [DETAILS] resolve library-path> QL pack dependencies for /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6 resolved OK.
+[2025-04-14 21:08:09] [DETAILS] resolve library-path> Found dbscheme through QL packs: /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/semmlecode.cpp.dbscheme.
+[2025-04-14 21:08:09] Plumbing command codeql resolve library-path completed:
+                      {
+                        "libraryPath" : [
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6",
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3",
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/dataflow/2.0.3",
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/mad/1.0.19",
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/rangeanalysis/1.0.19",
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/ssa/1.0.19",
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/suite-helpers/1.0.19",
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/tutorial/1.0.19",
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/typeflow/1.0.19",
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/typetracking/2.0.3",
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/util/2.0.6",
+                          "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/xml/1.0.19"
+                        ],
+                        "dbscheme" : "/home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/.codeql/libraries/codeql/cpp-all/4.0.3/semmlecode.cpp.dbscheme",
+                        "compilationCache" : [
+                          "/home/jgz/.codeql/compile-cache"
+                        ],
+                        "relativeName" : "codeql/cpp-queries/getMacroInvocationByArgument.ql",
+                        "qlPackName" : "codeql/cpp-queries"
+                      }
+[2025-04-14 21:08:09] [PROGRESS] execute queries> Compiling query plan for /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql.
+[2025-04-14 21:08:09] [DETAILS] execute queries> Resolving imports for /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql.
+[2025-04-14 21:08:10] Resolved file set for /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql hashes to d60c80d67fd3087e86e7569fd929ed51069baefd.
+[2025-04-14 21:08:10] [DETAILS] execute queries> Compilation cache hit for /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql.
+[2025-04-14 21:08:10] [SPAMMY] execute queries> No database upgrade/downgrade needed for /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql
+[2025-04-14 21:08:10] [PROGRESS] execute queries> [1/1] Found in cache: /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql.
+[2025-04-14 21:08:10] [PROGRESS] execute queries> Starting evaluation of codeql/cpp-queries/getMacroInvocationByArgument.ql.
+[2025-04-14 21:08:10] Starting evaluation of /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql
+[2025-04-14 21:08:10] (0s) Start query execution
+[2025-04-14 21:08:10] (0s) Beginning execution of /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql
+[2025-04-14 21:08:10] (0s)  >>> Full cache hit ResolveGlobalVariable::isVariable/1#6e051315/1@7492b9n4 with 38000 rows and digest 7e25e6nab06hmqpchgc8ckn5vo8.
+[2025-04-14 21:08:10] (0s)  >>> Full cache hit ResolveGlobalVariable::resolveGlobalVariable/1#17c3b74f/2@2e6c55qe with 38003 rows and digest 96c3e53d2gn98e7smvj51klg2f8.
+[2025-04-14 21:08:10] (0s)  >>> Full cache hit ResolveFunction::isFunction/1#9226b83f/1@86a96erp with 7359 rows and digest d253f308q76krr8nrpdo5rklbi4.
+[2025-04-14 21:08:10] (0s)  >>> Full cache hit ResolveFunction::resolveFunction/1#576ba5ee/2@7ac4e7lu with 7688 rows and digest 6c92d0qf7coqd05js97ujglovh5.
+[2025-04-14 21:08:10] (0s)  >>> Full cache hit ResolveClass::isClass/1#af2a1ca6/1@a18b30s2 with 684 rows and digest 77e5677gia62nubmcv0jgice9o3.
+[2025-04-14 21:08:10] (0s)  >>> Full cache hit ResolveClass::isType/1#eabb9878/1@d20834cm with 10118 rows and digest 8b33dbkdk46redfssclb6c6mj8c.
+[2025-04-14 21:08:10] (0s)  >>> Full cache hit ResolveClass::resolveClass/1#ea47deee/2@3249a7j5 with 1614 rows and digest 24ff64f441eku36ehmgbj50bsk8.
+[2025-04-14 21:08:10] (0s)  >>> Created relation preproctext/3@989e8bm3 with 14911 rows and digest 153e49cfmcjju2g5g0pucm47nb4.
+[2025-04-14 21:08:10] (0s)  >>> Created relation preprocdirects/3@e1d22ci2 with 22243 rows and digest cbefebkmbjdou2v68qc24l0ckm3.
+[2025-04-14 21:08:10] (0s) Starting to evaluate predicate preprocdirects_10#join_rhs/2@6b2750k4
+[2025-04-14 21:08:10] (0s)  >>> Created relation preprocdirects_10#join_rhs/2@6b2750k4 with 22243 rows and digest b1c7d6qs19jjodjeivdpkaibhr5.
+[2025-04-14 21:08:10] (0s) Starting to evaluate predicate Macro::Macro.getName/0#dispred#e28b3699/2@f72ac4fb
+[2025-04-14 21:08:10] (0s)  >>> Created relation Macro::Macro.getName/0#dispred#e28b3699/2@f72ac4fb with 7889 rows and digest ec57a9vb328chp76nvong1fcv25.
+[2025-04-14 21:08:10] (0s)  >>> Created relation macroinvocations/4@c9caa299 with 116701 rows and digest f5a3785b3f41q1iokif0oelr7df.
+[2025-04-14 21:08:10] (0s) Starting to evaluate predicate macroinvocations_130#join_rhs/3@8c68a9e5
+[2025-04-14 21:08:10] (0s)  >>> Created relation macroinvocations_130#join_rhs/3@8c68a9e5 with 116701 rows and digest 15e4d24bd5rv59l15rg36peso97.
+[2025-04-14 21:08:10] (0s)  >>> Created relation macro_argument_expanded/3@9ed68ard with 71844 rows and digest 8ee998hpnkmdf0q4rob3ri9he07.
+[2025-04-14 21:08:10] (0s) Starting to evaluate predicate project#macro_argument_expanded/2@8ebb83qq
+[2025-04-14 21:08:10] (0s)  >>> Created relation project#macro_argument_expanded/2@8ebb83qq with 66918 rows and digest 07225bms770nmrpee4c15jouau5.
+[2025-04-14 21:08:10] (0s)  >>> Created relation locations_default/6@2b5cc3pr with 177627 rows and digest e19ba2odi02acvjqsl8dcrs22e6.
+[2025-04-14 21:08:10] (0s) Starting to evaluate predicate Location::Location.getStartLine/0#d54f9e6c/2@db5d18cu
+[2025-04-14 21:08:10] (0s)  >>> Created relation Location::Location.getStartLine/0#d54f9e6c/2@db5d18cu with 177627 rows and digest 0d67e03k155ok9hjjpeakskvsc9.
+[2025-04-14 21:08:10] (0s)  >>> Created relation files/2@ec93749g with 216 rows and digest df40697ktlqqq21q97ravj8bsqd.
+[2025-04-14 21:08:10] (0s) Starting to evaluate predicate Location::Location.getContainer/0#9edabfb6/2@9e257dqa
+[2025-04-14 21:08:10] (0s)  >>> Created relation Location::Location.getContainer/0#9edabfb6/2@9e257dqa with 177627 rows and digest 2ee667en496f4fb9n79gc4r6ls3.
+[2025-04-14 21:08:10] (0s) Starting to evaluate predicate Location::Location.getContainer/0#9edabfb6_10#join_rhs/2@f822bclr
+[2025-04-14 21:08:10] (0s)  >>> Created relation Location::Location.getContainer/0#9edabfb6_10#join_rhs/2@f822bclr with 177627 rows and digest b4f979o4h6kka11lm4fadl2r0t9.
+[2025-04-14 21:08:10] (0s)  >>> Created relation macroparent/2@d0de2cm4 with 46069 rows and digest f4fc3ceecj7asds9dno0ejdi15c.
+[2025-04-14 21:08:10] (0s) Starting to evaluate predicate macroinvocations_03#join_rhs/2@c93090sc
+[2025-04-14 21:08:10] (0s)  >>> Created relation macroinvocations_03#join_rhs/2@c93090sc with 116701 rows and digest 05d7c44cbai2oht88n2fbq86rf5.
+[2025-04-14 21:08:10] (0s) Starting to evaluate predicate Macro::MacroAccess.getParentInvocation/0#dispred#e56b9a62/2@59f3c34k
+[2025-04-14 21:08:10] (0s)  >>> Created relation Macro::MacroAccess.getParentInvocation/0#dispred#e56b9a62/2@59f3c34k with 46069 rows and digest f4fc3ceecj7asds9dno0ejdi15c.
+[2025-04-14 21:08:10] (0s) Starting to evaluate predicate Macro::MacroAccess.getParentInvocation/0#dispred#e56b9a62_10#join_rhs/2@3d09d7c8
+[2025-04-14 21:08:10] (0s)  >>> Created relation Macro::MacroAccess.getParentInvocation/0#dispred#e56b9a62_10#join_rhs/2@3d09d7c8 with 46069 rows and digest da7f16sngnemi03gkk3dab7ufs5.
+[2025-04-14 21:08:10] (0s) Starting to evaluate predicate Macro::MacroAccess.getParentInvocation/0#dispred#e56b9a62_0#antijoin_rhs/1@a977f70l
+[2025-04-14 21:08:10] (0s)  >>> Created relation Macro::MacroAccess.getParentInvocation/0#dispred#e56b9a62_0#antijoin_rhs/1@a977f70l with 46069 rows and digest 9ad608eere9fvfmv00llivcm3cf.
+[2025-04-14 21:08:10] (0s) Starting to evaluate predicate Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db/2@i1#10c7d1p6 (iteration 1)
+[2025-04-14 21:08:10] (0s) 			 - Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db_delta has 70632 rows (order for disjuncts: delta=<standard>).
+[2025-04-14 21:08:10] (0s) Starting to evaluate predicate Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db/2@i2#10c7d1p6 (iteration 2)
+[2025-04-14 21:08:10] (0s) 			 - Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db_delta has 30391 rows (order for disjuncts: delta=<standard>).
+[2025-04-14 21:08:11] (0s) Starting to evaluate predicate Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db/2@i3#10c7d1p6 (iteration 3)
+[2025-04-14 21:08:11] (0s) 			 - Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db_delta has 6313 rows (order for disjuncts: delta=<standard>).
+[2025-04-14 21:08:11] (0s) Starting to evaluate predicate Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db/2@i4#10c7d1p6 (iteration 4)
+[2025-04-14 21:08:11] (0s) 			 - Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db_delta has 3460 rows (order for disjuncts: delta=<standard>).
+[2025-04-14 21:08:11] (0s) Starting to evaluate predicate Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db/2@i5#10c7d1p6 (iteration 5)
+[2025-04-14 21:08:11] (0s) 			 - Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db_delta has 2897 rows (order for disjuncts: delta=<standard>).
+[2025-04-14 21:08:11] (0s) Starting to evaluate predicate Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db/2@i6#10c7d1p6 (iteration 6)
+[2025-04-14 21:08:11] (0s) 			 - Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db_delta has 2340 rows (order for disjuncts: delta=<standard>).
+[2025-04-14 21:08:11] (0s) Starting to evaluate predicate Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db/2@i7#10c7d1p6 (iteration 7)
+[2025-04-14 21:08:11] (0s) 			 - Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db_delta has 668 rows (order for disjuncts: delta=<standard>).
+[2025-04-14 21:08:11] (0s) Starting to evaluate predicate Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db/2@i8#10c7d1p6 (iteration 8)
+[2025-04-14 21:08:11] (0s) Empty delta for Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db_delta (order for disjuncts: delta=<standard>).
+[2025-04-14 21:08:11] (0s) Accumulating deltas
+[2025-04-14 21:08:11] (0s)  >>> Created relation Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db/2@10c7d1p6 with 116701 rows and digest 482b5apv65chr8o48692ndnhjl7.
+[2025-04-14 21:08:11] (0s) Starting to evaluate predicate Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db_10#join_rhs/2@cd7601sc
+[2025-04-14 21:08:11] (0s)  >>> Created relation Macro::MacroAccess.getOutermostMacroAccess/0#d58b05db_10#join_rhs/2@cd7601sc with 116701 rows and digest b23a3beu7qlb9g604q9hgqt0ds9.
+[2025-04-14 21:08:11] (0s) Starting to evaluate predicate Macro::MacroAccess.getLocation/0#dispred#91048e4b/2@8557a81n
+[2025-04-14 21:08:11] (0s)  >>> Created relation Macro::MacroAccess.getLocation/0#dispred#91048e4b/2@8557a81n with 116701 rows and digest 1544f3fv9t44mbuqhjjone0df0a.
+[2025-04-14 21:08:11] (0s) Starting to evaluate predicate Macro::MacroAccess.getLocation/0#dispred#91048e4b_10#join_rhs/2@d4ec922s
+[2025-04-14 21:08:11] (0s)  >>> Created relation Macro::MacroAccess.getLocation/0#dispred#91048e4b_10#join_rhs/2@d4ec922s with 116701 rows and digest 6ec67aar5khraktml3gqkqc7jn6.
+[2025-04-14 21:08:11] (0s) Starting to evaluate predicate Element::Element.getFile/0#dispred#536cb5f3/2@92e8fc0j
+[2025-04-14 21:08:11] (0s)  >>> Created relation Element::Element.getFile/0#dispred#536cb5f3/2@92e8fc0j with 116701 rows and digest 9707f726fl19dn4olt0abtl3ge2.
+[2025-04-14 21:08:11] (0s) Starting to evaluate predicate #select#query/4@2d0157hh
+[2025-04-14 21:08:11] (0s)  >>> Created relation #select#query/4@2d0157hh with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2025-04-14 21:08:11] (0s) Query done
+[2025-04-14 21:08:11] (0s) Sequence stamp origin is -6060731047913428436
+[2025-04-14 21:08:11] (0s) Pausing evaluation to sync to disk at sequence stamp o+0
+[2025-04-14 21:08:11] (0s) Unpausing evaluation
+[2025-04-14 21:08:11] Evaluation of /home/jgz/data/codeql/packages/codeql/cpp-queries/1.3.6/getMacroInvocationByArgument.ql produced BQRS results.
+[2025-04-14 21:08:11] [PROGRESS] execute queries> [1/1 eval 609ms] Evaluation done; writing results to /home/jgz/data/result.bqrs.
+[2025-04-14 21:08:11] [PROGRESS] execute queries> Shutting down query evaluator.
+[2025-04-14 21:08:11] Pausing evaluation to close the cache at sequence stamp o+1
+[2025-04-14 21:08:11] The disk cache is freshly trimmed; leave it be.
+[2025-04-14 21:08:11] Unpausing evaluation
+[2025-04-14 21:08:11] Exiting with code 0
